@@ -7,43 +7,41 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "John"
+      name: "John",
+      show: true
     }
     console.log("constructor");
   }
 
-  componentWillMount() {
-    if(window.innerWidth > 500) {
-      this.setState(
-        {innerWidth: window.innerWidth}
-      )
-    }
-    console.log("Component will mount");
+  // componentWillMount() {
+  //   if(window.innerWidth > 500) {
+  //     this.setState(
+  //       {innerWidth: window.innerWidth}
+  //     )
+  //   }
+  //   console.log("Component will mount");
+  // }
+
+  static getDerivedStateFromProps(props, state) {
+    return {name: props.fname}
   }
 
   componentDidMount() {
     console.log("Component did mount");
   }
 
-  componentWillReceiveProps() {
-    console.log("component will receive props");
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate() {
     console.log("should component update");
     return true;
   }
 
-  componentWillUpdate() {
-    console.log("component will update");
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    document.querySelector('.div1').innerHTML = `Before name updated: ${prevState.name}`;
   }
 
-  componentDidUpdate(prevProps, presState) {
-    console.log("component did update",prevProps, presState);
-  }
-
-  componentWillUnmount() {
-    console.log("Component will unmount");
+  componentDidUpdate() {
+    console.log("component did update");
+    document.querySelector('.div2').innerHTML = `After name updated : ${this.state.name}`;
   }
 
   changeState() {
@@ -52,24 +50,43 @@ class App extends Component {
 
   unmountEle() {
     this.setState(
-      {name: "Robert"}
+      {show: false}
     );
   }
 
   render() {
     console.log("render");
-    if(this.state.name === "Robert") {
-      return (<div/>);
-    }
+    let display;
+    if(this.state.show) {
+      display = <Child/>;
+    };
     return (
       <div className= "App">
         name: {this.state.name}
         innerWidth: {this.state.innerWidth}
+        <div>
+          <p className="div1"></p>
+          <p className="div2"></p>
+        </div>
+        {display}
+        <div>
         <button onClick={this.changeState.bind(this)}>Change State</button>
         <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
+        </div>
       </div>
     );
     
+  }
+}
+
+class Child extends React.Component {
+  componentWillUnmount() {
+    console.log("Component will unmount");
+  }
+  render() {
+    return (
+      <p>Hello World!!</p>
+    )
   }
 }
 
