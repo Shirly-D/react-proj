@@ -1,6 +1,15 @@
 // import logo from './logo.svg';
 import React, { Component } from 'react';
 import './App.css';
+import Parent from './Components/Parent.js';
+
+export const PropApp = () => {
+  return (
+    <div>
+      <Parent></Parent>
+    </div>
+  )
+}
 
 class App extends Component {
 
@@ -12,15 +21,6 @@ class App extends Component {
     }
     console.log("constructor");
   }
-
-  // componentWillMount() {
-  //   if(window.innerWidth > 500) {
-  //     this.setState(
-  //       {innerWidth: window.innerWidth}
-  //     )
-  //   }
-  //   console.log("Component will mount");
-  // }
 
   static getDerivedStateFromProps(props, state) {
     return {name: props.fname}
@@ -37,6 +37,7 @@ class App extends Component {
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     document.querySelector('.div1').innerHTML = `Before name updated: ${prevState.name}`;
+    return true;
   }
 
   componentDidUpdate() {
@@ -63,15 +64,14 @@ class App extends Component {
     return (
       <div className= "App">
         name: {this.state.name}
-        innerWidth: {this.state.innerWidth}
         <div>
           <p className="div1"></p>
           <p className="div2"></p>
         </div>
         {display}
         <div>
-        <button onClick={this.changeState.bind(this)}>Change State</button>
-        <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
+          <button onClick={this.changeState.bind(this)}>Change State</button>
+          <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
         </div>
       </div>
     );
