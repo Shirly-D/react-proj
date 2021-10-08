@@ -23,6 +23,7 @@ class App extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
+    console.log("Get derived state from props");
     return {name: props.fname}
   }
 
@@ -36,6 +37,7 @@ class App extends Component {
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log("Get snapshot before update");
     document.querySelector('.div1').innerHTML = `Before name updated: ${prevState.name}`;
     return true;
   }
