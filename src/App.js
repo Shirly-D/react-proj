@@ -73,7 +73,11 @@ class App extends Component {
         {display}
         <div>
           <button onClick={this.changeState.bind(this)}>Change State</button>
+          <br/>
           <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
+        </div>
+        <div>
+          <Message></Message>
         </div>
       </div>
     );
