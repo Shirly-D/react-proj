@@ -10,14 +10,7 @@ import Home from './Components/Home.js';
 import About from './Components/About.js';
 import './App.css';
 import Parent from './Components/Parent.js';
-
-export const PropApp = () => {
-  return (
-    <div>
-      <Parent></Parent>
-    </div>
-  )
-}
+import CardList from './Task1/index.js';
 
 const Message = props => <div>{props.msg}</div>;
 
@@ -89,6 +82,9 @@ class App extends Component {
             <br/>
             <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
           </div>
+          <div>
+            <Parent></Parent>
+          </div>
 
           {/* reusable component example */}
           <div>
@@ -107,6 +103,10 @@ class App extends Component {
             <Route exact path="/" component={Home}></Route>
             <Route exact path="/about" component={About}></Route>
           </Switch>
+          <div className="List-card">
+            <CardList></CardList>
+          </div>
+
         </div>
       </Router>
     );

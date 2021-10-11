@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.List {
+  width: 16%;
+  border-radius: 12px;
+  margin: 50px 2%;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.List p {
+  padding: 10px 20px;
+  text-align: left; 
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Card1 { background-color: #8877CC; }
+.Card2 { background-color: #FF7CAF; }
+.Card3 { background-color: #B4CBFE; }
