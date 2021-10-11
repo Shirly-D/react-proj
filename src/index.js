@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App, { PropApp } from './App';
 import reportWebVitals from './reportWebVitals';
+import FunctionComp from './Components/FunctionComp';
+
+const numbers = [1, 2, 3, 4, 5];
 
 ReactDOM.render(
   <React.StrictMode>
     <App fname="Lisa"/>
     <PropApp />
+    <FunctionComp numbers= {numbers}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
