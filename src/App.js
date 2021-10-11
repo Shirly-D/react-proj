@@ -1,5 +1,13 @@
 // import logo from './logo.svg';
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
+import Home from './Components/Home.js';
+import About from './Components/About.js';
 import './App.css';
 import Parent from './Components/Parent.js';
 
@@ -67,26 +75,40 @@ class App extends Component {
       display = <Child/>;
     };
     return (
-      <div className= "App">
-        {/* change state and implement react lifecycle */}
-        name: {this.state.name}
-        <div>
-          <p className="div1"></p>
-          <p className="div2"></p>
-        </div>
-        {display}
-        <div>
-          <button onClick={this.changeState.bind(this)}>Change State</button>
-          <br/>
-          <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
-        </div>
+      <Router>
+        <div className= "App">
+          {/* change state and implement react lifecycle */}
+          name: {this.state.name}
+          <div>
+            <p className="div1"></p>
+            <p className="div2"></p>
+          </div>
+          {display}
+          <div>
+            <button onClick={this.changeState.bind(this)}>Change State</button>
+            <br/>
+            <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
+          </div>
 
-        {/* reusable component example */}
-        <div>
-          <Message msg="This is reusable component"></Message>
-          <Message msg="This is sub re-usable comp"></Message>
+          {/* reusable component example */}
+          <div>
+            <Message msg="This is reusable component"></Message>
+            <Message msg="This is sub re-usable comp"></Message>
+          </div>
+          <ul className="header">
+            <li>
+              <Link to="/">Home</Link>
+            </li> 
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/about" component={About}></Route>
+          </Switch>
         </div>
-      </div>
+      </Router>
     );
     
   }
