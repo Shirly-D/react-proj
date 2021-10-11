@@ -11,8 +11,11 @@ export const PropApp = () => {
   )
 }
 
+const Message = props => <div>{props.msg}</div>;
+
 class App extends Component {
 
+  // react lifecycle implementatiom
   constructor() {
     super();
     this.state = {
@@ -65,6 +68,7 @@ class App extends Component {
     };
     return (
       <div className= "App">
+        {/* change state and implement react lifecycle */}
         name: {this.state.name}
         <div>
           <p className="div1"></p>
@@ -76,8 +80,11 @@ class App extends Component {
           <br/>
           <button onClick={this.unmountEle.bind(this)}>Unmount element</button>
         </div>
+
+        {/* reusable component example */}
         <div>
-          <Message></Message>
+          <Message msg="This is reusable component"></Message>
+          <Message msg="This is sub re-usable comp"></Message>
         </div>
       </div>
     );
