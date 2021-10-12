@@ -10,7 +10,8 @@ import Home from './Components/Home.js';
 import About from './Components/About.js';
 import './App.css';
 import Parent from './Components/Parent.js';
-import CardList from './Task1/index.js';
+import data from './Task1/data.js'
+// import CardList from './Task1/index.js';
 
 const Message = props => <div>{props.msg}</div>;
 
@@ -100,12 +101,12 @@ class App extends Component {
             </li>
           </ul>
           <Switch>
-            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/" render={() => <Home data={data} />}></Route>
             <Route exact path="/about" component={About}></Route>
           </Switch>
-          <div className="List-card">
+          {/* <div className="List-card">
             <CardList></CardList>
-          </div>
+          </div> */}
 
         </div>
       </Router>
