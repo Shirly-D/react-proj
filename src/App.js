@@ -13,6 +13,8 @@ import Parent from './Components/Parent.js';
 import data from './Task1/data.js'
 // import CardList from './Task1/index.js';
 import AxiosApp from './Components/Axios.js';
+import Emp from './Task2/Employee.js';
+import EmployeeDetails from './Task2/EmpDetails.js';
 
 export const PropApp = () => {
   return (
@@ -112,7 +114,12 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => <Home data={data} />}></Route>
             <Route exact path="/about" component={About}></Route>
+            <Route exact path="/employee" component={Emp}></Route>
+            <Route exact path="/employee/:id" component={EmployeeDetails}></Route>
           </Switch>
+          <div>
+            <Emp></Emp>
+          </div>
           {/* <div className="List-card">
             <CardList></CardList>
           </div> */}
