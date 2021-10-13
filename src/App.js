@@ -10,6 +10,7 @@ import Home from './Components/Home.js';
 import About from './Components/About.js';
 import './App.css';
 import Parent from './Components/Parent.js';
+import AxiosApp from './Components/Axios.js';
 
 export const PropApp = () => {
   return (
@@ -107,6 +108,9 @@ class App extends Component {
             <Route exact path="/" component={Home}></Route>
             <Route exact path="/about" component={About}></Route>
           </Switch>
+          <div>
+            <AxiosApp />
+          </div>
         </div>
       </Router>
     );
