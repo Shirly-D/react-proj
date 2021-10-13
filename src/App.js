@@ -12,6 +12,15 @@ import './App.css';
 import Parent from './Components/Parent.js';
 import data from './Task1/data.js'
 // import CardList from './Task1/index.js';
+import AxiosApp from './Components/Axios.js';
+
+export const PropApp = () => {
+  return (
+    <div>
+      <Parent></Parent>
+    </div>
+  )
+}
 
 const Message = props => <div>{props.msg}</div>;
 
@@ -108,6 +117,9 @@ class App extends Component {
             <CardList></CardList>
           </div> */}
 
+          <div>
+            <AxiosApp />
+          </div>
         </div>
       </Router>
     );
