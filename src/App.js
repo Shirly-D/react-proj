@@ -11,6 +11,7 @@ import About from './Components/About.js';
 import './App.css';
 import Parent from './Components/Parent.js';
 import AxiosApp from './Components/Axios.js';
+import Hoc from './Hoc.js';
 
 export const PropApp = () => {
   return (
@@ -111,6 +112,9 @@ class App extends Component {
           <div>
             <AxiosApp />
           </div>
+          <div>
+            This is higher order component example
+          </div>
         </div>
       </Router>
     );
@@ -129,6 +133,8 @@ class Child extends React.Component {
   }
 }
 
+
+App = Hoc(App);
 
 
 export default App;
