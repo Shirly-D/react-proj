@@ -4,6 +4,7 @@ import './index.css';
 import App, { PropApp } from './App';
 import reportWebVitals from './reportWebVitals';
 import FunctionComp from './Components/FunctionComp';
+import { Container } from './Context';
 
 const numbers = [1, 2, 3, 4, 5];
 
@@ -12,6 +13,7 @@ ReactDOM.render(
     <App fname="Lisa"/>
     <PropApp />
     <FunctionComp numbers= {numbers}/>
+    <Container />
   </React.StrictMode>,
   document.getElementById('root')
 );
