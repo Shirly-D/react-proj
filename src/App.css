@@ -37,7 +37,7 @@
   }
 }
 
-.List {
+/* .List {
   width: 16%;
   border-radius: 12px;
   margin: 50px 2%;
@@ -54,4 +54,58 @@
 
 .Card1 { background-color: #8877CC; }
 .Card2 { background-color: #FF7CAF; }
-.Card3 { background-color: #B4CBFE; }
+.Card3 { background-color: #B4CBFE; } */
+
+/*weather app stylying*/
+
+.Weather-section {
+  width: 80%;
+  margin: 100px auto;
+  font-family: serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.Weather-section h1 {
+  padding: 30px;
+  background-color: #61dafb;
+  font-size: 45px;
+}
+
+.Weather-section p {
+  width: 40%;
+  padding: 20px;
+  margin: 0 auto;
+  color: red;
+}
+
+.Weather-section__display {
+  width: 55%;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 50px auto;
+  background-color: #8877CC;
+}
+
+.Weather-section__input input{
+  width: 30%;
+  padding: 15px 10px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  background-color: #282c34;
+  color: #FFFFFF;
+}
+
+.Weather-section__input button {
+  width: 10%;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 0 auto;
+  display: block;
+  background-color: burlywood;
+  font-size: 16px;
+  transition: 1s;
+}
+
+.Weather-section__input button:hover { background-color: cadetblue;}
