@@ -12,6 +12,7 @@ import './App.css';
 import Parent from './Components/Parent.js';
 import AxiosApp from './Components/Axios.js';
 import Hoc from './Hoc.js';
+import ReduxState from './Components/Redux_state.js';
 
 export const PropApp = () => {
   return (
@@ -115,6 +116,9 @@ class App extends Component {
           <div>
             This is higher order component example
           </div>
+          <>
+          <ReduxState />
+          </>
         </div>
       </Router>
     );
